@@ -1,5 +1,5 @@
-build-ce?.sh
-build-ma?.sh
+/build-ce?.sh
+/build-ma?.sh
 *.iso
 *.json
 *.log
@@ -8,3 +8,4 @@ files/login-ce?.svg
 files/login-ma?.svg
 output-virtualbox-iso
 *.ova
+/script/materiapps-ma?.sh
