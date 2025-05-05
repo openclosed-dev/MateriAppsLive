@@ -1,0 +1,17 @@
+name: malive
+description: LXD profile for verifying MateriApps LIVE! 
+devices:
+  eth0:
+    name: eth0
+    network: lxdbr0
+    type: nic
+  rdp:
+    # Accepting RDP connections
+    bind: host
+    connect: tcp:0.0.0.0:3389
+    listen: tcp:0.0.0.0:3389
+    type: proxy
+  root:
+    path: /
+    pool: default
+    type: disk
