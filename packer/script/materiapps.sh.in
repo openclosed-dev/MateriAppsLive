@@ -29,4 +29,7 @@ fi
 if [ -d /etc/skel/.config ]; then
   cp -frp /etc/skel/.config $HOME
 fi
-chown -R user.user $HOME/Desktop $HOME/.config
+username=$(basename $HOME)
+uid=$(id -u $username)
+gid=$(id -g $username)
+chown -R $uid:$gid $HOME/Desktop $HOME/.config

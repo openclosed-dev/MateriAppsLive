@@ -24,4 +24,7 @@ EOF
 echo "==> Switch off color prompt"
 sed -i -e s/color_prompt=yes/color_prompt=no/ /etc/skel/.bashrc
 cp /etc/skel/.bashrc $HOME
-chown user.user $HOME/.bashrc
+username=$(basename $HOME)
+uid=$(id -u $username)
+gid=$(id -g $username)
+chown $uid:$gid $HOME/.bashrc

@@ -6,4 +6,7 @@ cat << EOF > $HOME/.emacs.d/init.el
 (setq inhibit-startup-screen t)
 (setq default-frame-alist '((height . 24)))
 EOF
-chown -R user.user $HOME/.emacs.d
+username=$(basename $HOME)
+uid=$(id -u $username)
+gid=$(id -g $username)
+chown -R $uid:$gid $HOME/.emacs.d
