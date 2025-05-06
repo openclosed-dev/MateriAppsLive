@@ -22,3 +22,6 @@ apt-get install -y --no-install-recommends \
   unzip \
   usermode \
   zutty
+
+timedatectl set-timezone Asia/Tokyo
+ 
