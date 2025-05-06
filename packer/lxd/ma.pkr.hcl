@@ -48,6 +48,11 @@ variable "debian_codename" {
   default = "bookworm"
 }
 
+variable "architecture" {
+  type    = string
+  default = "amd64"
+}
+
 variable "apt_proxy" {
   type    = string
   default = env("LXD_APT_PROXY")
@@ -62,7 +67,11 @@ source "lxd" "debian" {
   }
   skip_publish = false
   publish_properties = {
-    description = "MateriApps LIVE! ${var.ma_version}"
+    architecture = var.architecture,
+    description  = "MateriApps LIVE! ${var.ma_version}",
+    os           = "Debian",
+    release      = "bookworm",
+    variant      = "cloud"
   }
 }
 

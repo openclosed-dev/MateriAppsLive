@@ -7,5 +7,5 @@ else
   	arch="arm64"
 fi
 
-packer build --var-file ma5.pkrvars.hcl ma.pkr.hcl \
+packer build --var-file ma5.pkrvars.hcl --var "architecture=${arch}" ma.pkr.hcl \
 	| tee build-ma5-${arch}.log
