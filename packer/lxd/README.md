@@ -15,7 +15,7 @@ Install LXD from Snap.
 sudo snap install lxd
 ```
 
-Add your account to `lxd` gorup.
+Add your account to `lxd` group.
 ```shell
 sudo usermod -aG lxd $USER
 newgrp lxd
@@ -64,8 +64,8 @@ cd <path/to/this/directory>
 
 Delete the image if already exists.
 ```shell
-lxd image list
-lxd image delete <image-alias>
+lxc image list
+lxc image delete <image-alias>
 ```
 
 The following command starts the build.
@@ -102,7 +102,7 @@ systemctl status apt-cacher-ng
 ```
 
 ```shell
-export LXD_APT_PROXY='<gateway IP address of lxdbr0 network>'
+export LXD_APT_PROXY='http://_gateway:3142'
 # Subsequent builds may receive performance gain
 ```
 
